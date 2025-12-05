@@ -1,218 +1,159 @@
-# 📦 sts
+---
+title: "README"
+output: html_document
+date: "2025-12-05"
+---
 
-**Description**: Exercises for the course *Data Science for Socio-Technical Systems*\
-**Author**: Tim Fraser, PhD
-
-------------------------------------------------------------------------
-
-## 🧩 Summary
-
-> This repository contains exercises and example projects developed for the course *Data Science for Socio-Technical Systems*. It provides hands-on training in foundational skills in the R programming langauge for working with relational databases, data visualization, and dashboard development using open-source tools. We focus on socio-technical systems such as transportation, urban mobility, renewable energy, and disaster resilience. Course materials guide participants through querying large-scale, complex data formats—including panel data, GIS, and network data—and communicating insights through interactive, production-ready dashboards. Designed for learners with no prior coding experience, the repository equips users to build and use data-driven decision-support tools that effectively engage public and technical audiences alike.
-
-------------------------------------------------------------------------
-
-## 📚 Table of Contents for Repository
-
-### 📁 [sts](https://github.com/timothyfraser/sts/tree/3week)
-
--   📄 [README.md](https://github.com/timothyfraser/sts/blob/3week/README.md)
--   📄 [LICENSE](https://github.com/timothyfraser/sts/blob/3week/LICENSE)
--   📄 [sts.Rproj](https://github.com/timothyfraser/sts/blob/3week/sts.Rproj)
-
-#### 🛠️ [workshops](https://github.com/timothyfraser/sts/tree/3week/workshops)
-
--   📁 [6C_app_nycflights](https://github.com/timothyfraser/sts/tree/3week/workshops/6C_app_nycflights)
--   📁 [28C_datacom](https://github.com/timothyfraser/sts/tree/3week/workshops/28C_datacom)
--   📁 [23C_dashboards](https://github.com/timothyfraser/sts/tree/3week/workshops/23C_dashboards)
-    -   📁 [app_nycflights](https://github.com/timothyfraser/sts/tree/3week/workshops/23C_dashboards/app_nycflights)
-    -   📁 [app_multipage](https://github.com/timothyfraser/sts/tree/3week/workshops/23C_dashboards/app_multipage)
--   📁 [16C_app](https://github.com/timothyfraser/sts/tree/3week/workshops/16C_app)
-
-#### 🗂️ [data](https://github.com/timothyfraser/sts/tree/3week/data)
-
--   📁 [weather](https://github.com/timothyfraser/sts/tree/3week/data/weather)
--   📁 [transportation](https://github.com/timothyfraser/sts/tree/3week/data/transportation)
--   📁 [social_infra](https://github.com/timothyfraser/sts/tree/3week/data/social_infra)
--   📁 [risk_index](https://github.com/timothyfraser/sts/tree/3week/data/risk_index)
--   📁 [redlining](https://github.com/timothyfraser/sts/tree/3week/data/redlining)
--   📁 [japan](https://github.com/timothyfraser/sts/tree/3week/data/japan)
--   📁 [evacuation](https://github.com/timothyfraser/sts/tree/3week/data/evacuation)
--   📁 [electric_school_buses](https://github.com/timothyfraser/sts/tree/3week/data/electric_school_buses)
--   📁 [congestion_pricing](https://github.com/timothyfraser/sts/tree/3week/data/congestion_pricing)
--   📁 [committees](https://github.com/timothyfraser/sts/tree/3week/data/committees)
--   📁 [boston_voting](https://github.com/timothyfraser/sts/tree/3week/data/boston_voting)
--   📁 [boston_social_infra](https://github.com/timothyfraser/sts/tree/3week/data/boston_social_infra)
--   📁 [bluebikes](https://github.com/timothyfraser/sts/tree/3week/data/bluebikes)
--   📁 [air_quality](https://github.com/timothyfraser/sts/tree/3week/data/air_quality)
-
-#### 📦 Other Folders
-
--   📁 [docs](https://github.com/timothyfraser/sts/tree/3week/docs)
--   📁 [functions](https://github.com/timothyfraser/sts/tree/3week/functions)
--   📁 [other](https://github.com/timothyfraser/sts/tree/3week/other)
-
-------------------------------------------------------------------------
-
-## Getting Started
-
-To get started, run the `workshops/packages.R` script to install prerequisite packages. Or type into the console:
-
-``` r
-source("workshops/packages.R")
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Then, open our first script, called `1P_coding_0.R`! In `workshops`, all scripts are numbered 1, 2, ... n with a letter describing the purpose of the script: `C` (class), `P` (practice), or `S` (solutions).
 
-------------------------------------------------------------------------
-
-## 🧾 [Cheat Sheets](#cheat-sheets)
-
-### Cheat Sheets Summary Table
-
-Our course relies on these main R packages. Running into questions? Check out the package documentation, which often have many helpful examples. Or, for a quick check, use the cheatsheet provided!
-
-| Package | Purpose | Cheatsheet | Documentation |
-|------------------|-------------------|------------------|------------------|
-| DBI | database interface | [Cheatsheet](https://github.com/timothyfraser/sts?tab=readme-ov-file#using-databases-in-r) | [Documentation](https://dbi.r-dbi.org/articles/spec.html) |
-| rstudio | rstudio interface | [Cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html) | [Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf) |
-| dplyr | data wrangling | [Cheatsheet](https://rstudio.github.io/cheatsheets/data-transformation.pdf) | [Documentation](https://dplyr.tidyverse.org/) |
-| ggplot2 | data viz | [Cheatsheet](https://rstudio.github.io/cheatsheets/data-visualization.pdf) | [Documentation](https://ggplot2.tidyverse.org/) |
-| viridis | color palettes | \- | [Documentation](https://sjmgarnier.github.io/viridis/) |
-| broom | tidying models | [Cheatsheet](https://pop.princeton.edu/sites/g/files/toruqf496/files/documents/2018May_Broom_0.pdf) | [Documentation](https://broom.tidymodels.org/) |
-| stringr | string searching | [Cheatsheet](https://rstudio.github.io/cheatsheets/strings.pdf) | [Documentation](https://stringr.tidyverse.org/) |
-| lubridate | dates | [Cheatsheet](https://rstudio.github.io/cheatsheets/lubridate.pdf) | [Documentation](https://lubridate.tidyverse.org/) |
-| shiny | dashboards | [Cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf) | [Documentation](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) |
-| bslib | user interfaces for apps | \- | [Documentation](https://rstudio.github.io/bslib/) |
-| sf | spatial data | [Cheatsheet](https://rstudio.github.io/cheatsheets/sf.pdf) | [Documentation](https://r-spatial.github.io/sf/) |
-| tidygraph | tidying networks | \- | [Documentation](https://tidygraph.data-imaginist.com/) |
-
-------------------------------------------------------------------------
-
-### Using Databases in R
-
-``` mermaid
-flowchart TD
-
-local[["<b>Local</b><br><i>data stored locally</i>"]]
-server[["<b>Server</b><br><i>data queried from server</i>"]]
-tabular[["<b>Tabular Data</b><br><i>spreadsheets</i>"]]
-sql[["<b>SQL</b><br><i>relational databases</i>"]]
-nosql[["<b>NoSQL</b><br><i>non-relational databases</i>"]]
-
-sqlite[(".sqlite")]
-rds[(".rds")]
-geojson[(".geojson")]
-csv[(".csv")]
-mysql[("MySQL")]
-mariadb[("MariaDB")]
-postgres[("PostgreSQL")]
-mongodb[("MongoDB")]
-neo4j[("Neo4j")]
-
-read_csv["<b>connect</b>:<br>readr<br>read_csv()"]
-use_csv["<b>use case:</b><br>portability"]
-
-read_geojson["<b>connect</b>:<br>sf<br>read_sf()"]
-use_geojson["<b>use case:</b><br>geometry<br>column"]
-
-read_rds["<b>connect</b>:<br>readr<br>read_rds()"]
-use_rds["<b>use case:</b><br>compressed,<br>keeps R formats"]
-
-read_sqlite["<b>connect</b>:<br>DBI, RSQLite<br>dbConnect()"]
-use_sqlite["<b>use case:</b><br>when too big<br>for csv"]
-
-read_mysql["<b>connect</b>:<br>DBI, RMySQL<br>dbConnect()"]
-use_mysql["<b>use case:</b><br>widely used"]
-
-read_mariadb["<b>connect</b>:<br>DBI, RMariaDB<br>dbConnect()"]
-use_mariadb["<b>use case:<b><br>open-source"]
-
-read_postgres["<b>connect</b>:<br>DBI, RPostgreSQL,<br>dbConnect()"]
-use_postgres["<b>use case:</b><br>more data types"]
-
-read_mongodb["<b>connect</b>:<br>mongolite<br>mongo()"]
-use_mongodb["<b>use case:</b><br>documents"]
-
-read_neo4j["<b>connect</b>:<br>neo4r<br>neo4j_api$new()"]
-use_neo4j["<b>use case:</b><br>graphs"]
-
-secure_server["<b>Security</b>:<br>Users & Roles<br>Passwords<br>IP Whitelisting"]
-secure_local["<br>Security</b>:<br>Usually None"]
-
-tabular --- csv --- read_csv --- use_csv --- local
-tabular --- rds --- read_rds --- use_rds --- local
-tabular --- geojson --- read_geojson --- use_geojson --- local
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-sql ---  sqlite --- read_sqlite --- use_sqlite --- local
-sql --- mysql --- read_mysql --- use_mysql --- server 
-sql --- mariadb --- read_mariadb --- use_mariadb --- server 
-sql --- postgres --- read_postgres --- use_postgres --- server 
+# Boston BlueBikes Analysis
 
-nosql --- mongodb --- read_mongodb --- use_mongodb 
-nosql --- neo4j --- read_neo4j --- use_neo4j
+## Overview
 
-use_mongodb --- local
-use_mongodb --- server
-use_neo4j --- local
-use_neo4j --- server 
+This R project analyzes **BlueBikes station distribution and daily ridership in Boston**, integrating spatial and temporal perspectives. The analysis includes:
 
-local --- secure_local
-server --- secure_server
+1. **Spatial Analysis of Stations**
 
-classDef type1 fill:#ea9999,stroke:#333,stroke-width:2px,color:#373737;
-classDef type2 fill:#c9d6a5,stroke:#333,stroke-width:2px,color:#373737;
-classDef type3 fill:#89cce2,stroke:#333,stroke-width:2px,color:#373737;
-classDef type4 fill:#d9d9d9,stroke:#333,stroke-width:2px,color:#373737;
-classDef type5 fill:#d9d9d9,stroke:#333,stroke-width:2px,color:#373737;
+   * Locations of stations inside Boston neighborhoods
+   * Income-based filtering of neighborhoods (high-income vs. low-income)
+   * Station-to-resident ratios across neighborhoods
+   * Visualization of station density and clustering
 
-class sql,mysql,mariadb,postgres,sqlite,read_mysql,read_mariadb,read_postgres,use_mysql,use_mariadb,use_postgres,read_sqlite,use_sqlite, type1;
-class nosql,mongodb,neo4j,read_mongodb,use_mongodb,read_neo4j,use_neo4j type2;
-class tabular,csv,rds,geojson,read_csv,read_geojson,read_rds,use_csv,use_geojson,use_rds type3;
-class local,secure_local, type4;
-class server,secure_server, type5;
+2. **Temporal & Statistical Analysis**
+
+   * Daily ridership in 2021 across station income categories
+   * Confidence intervals for mean rides per day
+   * Summary statistics (mean, median, min, max, IQR)
+   * Threshold and cross-section analyses
+   * Regression models for ridership effects of neighborhood income and rush hour
+   * Monte Carlo simulations for predicted ride counts
+
+---
+
+## Data Sources
+
+* **Spatial Data**
+
+  * `data/social_infra/bounds.geojson` – Boston boundary
+  * `data/boston_social_infra/boston_census_data.csv` – neighborhood population & density
+  * `data/boston_social_infra/boston_grid.geojson` – census grid geometries
+  * `data/bluebikes/bgdataset.rds` – neighborhood-level station info
+  * `data/bluebikes/stationbg_dataset.rds` – station-level spatial data
+
+* **Ridership Data**
+
+  * `data/bluebikes/bluebikes.sqlite` – daily trip counts between stations
+  * Table: `tally_rush_edges`
+
+---
+
+## Packages
+
+```r
+dplyr, readr, ggplot2, tidyr, stringr, lubridate, RSQLite, broom, sf, ggspatial, viridis, GGally, gridExtra
 ```
 
-------------------------------------------------------------------------
+---
 
-### cheatsheet: `RStudio` Interface
+## Analysis Workflow
 
-![`rstudio` interface](docs/cheatsheet_rstudio_1.png)
+### 1. Spatial Analysis
 
-![`rstudio` interface](docs/cheatsheet_rstudio_2.png)
+* Load Boston boundary and BlueBikes station data.
+* Filter stations **within Boston** and identify **high-income neighborhoods** (pop earning > $60k).
+* Visualize stations with **geom_sf()** and add scale bars.
+* Compute **mean, median, sum, and station-to-resident rate per neighborhood**.
+* Rank neighborhoods by station density and cluster stations using **k-means**.
+* Plot clusters and station density per neighborhood.
 
-### cheatsheet: `dplyr` package
+---
 
-![`dplyr` package](docs/cheatsheet_dplyr_1.png)
+### 2. Ridership Analysis
 
-![`dplyr` package](docs/cheatsheet_dplyr_2.png)
+* Connect to SQLite database and filter `tally_rush_edges` for **2021 trips**.
+* Join with station income classification (`maj_high_income`) to create `start_high_income` and `end_high_income`.
+* Drop rows with missing data for clean analysis.
 
-### cheatsheet: `ggplot2` package
+#### Summary and Visualization
 
-![`ggplot` package](docs/cheatsheet_ggplot_1.png)
+* Compute mean rides, SE, and 95% confidence intervals per day by start neighborhood income.
+* Visualize trends using **line plots with ribbons** for confidence intervals.
+* Density plots for distributions of total rides per day.
+* Summary statistics: min, max, mean, median, IQR.
 
-![`ggplot` package](docs/cheatsheet_ggplot_2.png)
+---
 
-### cheatsheet: `stringr` package
+### 3. Cross-Section & Threshold Analysis
 
-![`stringr` package](docs/cheatsheet_stringr_1.png)
+* Count unique cross-sections per day.
+* Calculate share of cross-sections exceeding thresholds (e.g., >2000 rides).
+* Identify days with lowest and highest share exceeding threshold.
 
-![`stringr` package](docs/cheatsheet_stringr_2.png)
+---
 
-### cheatsheet: `lubridate` package
+### 4. Regression Modeling
 
-![`lubridate` package](docs/cheatsheet_lubridate_1.png)
+* Fit linear models to estimate effects on total rides:
 
-![`lubridate` package](docs/cheatsheet_lubridate_2.png)
+  1. `total_rides ~ start_high_income`
+  2. `total_rides ~ end_high_income`
+  3. `total_rides ~ start_high_income + end_high_income + rush`
+* Compare model performance using **R² and sigma**.
 
-### cheatsheet: `shiny` package
+---
 
-![`shiny` package](docs/cheatsheet_shiny_1.png)
+### 5. Monte Carlo Simulation
 
-![`shiny` package](docs/cheatsheet_shiny_2.png)
+* Simulate 1000 daily ridership scenarios using model predictions and residual error (`sigma`).
+* Calculate **mean effects, differences, percent change, and z-scores** between high- and low-income neighborhoods.
+* Compute confidence intervals for simulated outcomes.
 
-### cheatsheet: `sf` package
+---
 
-![`sf` package](docs/cheatsheet_sf_1.png)
+### 6. Key Outputs
 
-![`sf` package](docs/cheatsheet_sf_2.png)
+* Spatial maps of stations and neighborhoods, highlighting high-income areas
+* Station-to-resident ratios per neighborhood and cluster visualizations
+* Daily ridership trends with confidence intervals
+* Summary statistics of ride counts per income group
+* Threshold and cross-section analyses
+* Regression model results with income and rush-hour effects
+* Monte Carlo simulations for predicted ridership and confidence intervals
+
+---
+
+## Requirements
+
+* R ≥ 4.2
+* Required packages: see above
+* Data folders:
+
+```
+data/social_infra/
+data/boston_social_infra/
+data/bluebikes/
+```
+
+---
+
+## How to Run
+
+1. Place the `data/` folder in your working directory.
+2. Run the R script sequentially to perform spatial, temporal, and simulation analyses.
+3. Review visualizations and tables for insights into station distribution and ridership trends.
+
+---
+
+## Notes
+
+* High-income neighborhoods: >50% population earns > $60,000/year
+* Station density computed as: `# stations / (pop_density * total_area / 1000)`
+* Confidence intervals calculated as `mean ± 1.96 × SE`
+* Simulated outcomes assume normal residual error distribution
+
